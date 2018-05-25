@@ -1,0 +1,13 @@
+<h1>Посты за неделю</h1>
+<% d = Date.today-7..Date.today
+  Post.all.each do |post|
+  if d.include?(post.created_at.to_date)
+%>
+  <div class="container">
+    <h1><%= post.title %></h1>
+    <h2><%= post.summary %></h2>
+  </div>
+
+<% end
+   end %>
+
