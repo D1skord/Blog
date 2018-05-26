@@ -3,7 +3,7 @@
   Post.all.each do |post|
   if d.include?(post.created_at.to_date)
 %>
-  <div class="container">
+  <div class="container" style="background-color: transparent;">
     <h1><%= post.title %></h1>
     <h2><%= post.summary %></h2>
   </div>

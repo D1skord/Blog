@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users, only: [:update]
+
   resources :subscriptions, only: [] do
     patch :send_mail, on: :collection
   end
 
   # patch 'subscriptions/send'
 
-  devise_for :users
+
   root 'posts#index'
   resources :posts
 end

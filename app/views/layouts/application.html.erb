@@ -34,6 +34,43 @@
             <li class="nav-item active">
               <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link"%>
             </li>
+
+
+
+
+            <li>
+
+                <div class="container">
+                  <%= form_for current_user do |f| %>
+                    <div class="form-group">
+                      <%= f.radio_button :digest_type, 0, class: 'form-control' %>
+                      <%= f.label :digest_type, "Ежедневная подписка" %>
+
+                      <%= f.radio_button :digest_type, 1, class: 'form-control' %>
+                      <%= f.label :digest_type, "Еженедельная подписка" %>
+
+                      <%= f.radio_button :digest_type, 2, class: 'form-control' %>
+                      <%= f.label :digest_type, "Отказ от рассылки" %>
+
+                    </div>
+
+                    <%= f.submit "Применить", class: 'btn btn-primary' %>
+<!--                <div class="radio">-->
+<!--                  <label><input type="radio" name="optradio">Ежедневная подписка</label>-->
+<!--                </div>-->
+<!--                <div class="radio">-->
+<!--                  <label><input type="radio" name="optradio">Еженедельная подписка</label>-->
+<!--                </div>-->
+<!--                <div class="radio">-->
+<!--                  <label><input type="radio" name="optradio">Отказ от рассылки</label>-->
+<!--                </div>-->
+                    <% end %>
+                </div>
+
+            </li>
+
+
+
             <% else %>
             <li class="nav-item active">
               <%= link_to "Выход", new_user_session_path, class: "nav-link"%>

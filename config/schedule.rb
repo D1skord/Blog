@@ -22,3 +22,7 @@
 every 1.days, at: '7:00 am' do
   runner 'EventMailer.digest_daily.deliver_now'
 end
+
+every 7.days, at: '7:00 am' do
+  runner 'EventMailer.digest_weekly.deliver_now'
+end
