@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  def admin?
+    admin
+  end
 end

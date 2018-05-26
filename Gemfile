@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 gem 'whenever', require: false
+
+gem 'pundit'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

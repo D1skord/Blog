@@ -4,4 +4,8 @@ class SubscriptionsController < ApplicationController
     redirect_to posts_path, success: "Рассылка выполнена!"
     #render plain: "test"
   end
+
+  def index
+    @subscriptions = Subscription.all
+  end
 end
