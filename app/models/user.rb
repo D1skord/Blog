@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   scope :daily, -> { where(digest_type: 0) }
+  scope :weekly, -> { where(digest_type: 1) }
   scope :confirmed, -> { where(confirm: true) }
 
   def admin?

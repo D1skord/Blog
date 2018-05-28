@@ -10,9 +10,11 @@ class EventMailer < ApplicationMailer
     mail to: user.email, subject: "Ежедневная рассылка"
   end
 
-  def digest_weekly
+  def digest_weekly(user)
     @posts = Post.where(created_at: Date.today-7..Date.today)
-    mail to: User.all.collect(&:email), subject: "Еженедельная рассылка"
+    @subscription = Subscription.weekly
+    @user = user
+    mail to: user.email, subject: "Еженедельная рассылка"
   end
 
 end

@@ -1,5 +1,5 @@
 <h2><%=  @subscription.message %></h2>
-<h3>Процент доставки: <%= Subscription.confirmation_percent %> %</h3>
+<h3>Процент доставки: <%= Subscription.confirmation_percent %>%</h3>
 <ul>
   <% @users.each do |user|
       if user.confirm?

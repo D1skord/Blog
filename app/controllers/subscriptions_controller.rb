@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
   def send_mail
     Subscription.send_daily
+    Subscription.send_weekly
     redirect_to posts_path, success: "Рассылка выполнена!"
   end
 
