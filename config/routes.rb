@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:index, :show] do
     patch :send_mail, on: :collection
     resources :users, only: [] do
-      patch :confirm, on: :member
+      get :confirm, on: :member
     end
   end
 

@@ -13,7 +13,9 @@ class SubscriptionsController < ApplicationController
     @users = User.where(digest_type: @subscription.digest_type)
   end
 
-  def confirm
-    User.find(params[:id]).update confirm: true
-  end
+
 end
+
+
+
+

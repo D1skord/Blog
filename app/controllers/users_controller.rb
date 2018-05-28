@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     redirect_to posts_path, success: "Параметры обновлены!"
   end
 
+  def confirm
+    User.find(params[:id]).update confirm: true
+    redirect_to posts_path, success: "Получение рассылки подтверждено!"
+  end
+
   private
   def user_params
     params.require(:user).permit(:digest_type)

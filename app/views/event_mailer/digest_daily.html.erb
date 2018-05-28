@@ -2,7 +2,8 @@
 
 <h3><%= @subscription.message %></h3>
 
-Если вы получили это сообщение, перейдите пожалуйста по <%= link_to 'ссылке', confirm_subscription_user_url(@subscription, @user), method: :patch %>
+Если вы получили это сообщение, перейдите пожалуйста по
+<%= link_to 'ссылке', confirm_subscription_user_url(@subscription, @user) %>
 
 <% @posts.each do |post| %>
 
