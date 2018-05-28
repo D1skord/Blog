@@ -1,3 +1,6 @@
-<% @subscriptions.each do |subs| %>
-  <p><%=  subs.message %></p>
-<% end %>
+<h1>Список рассылок:</h1>
+<ul>
+  <% @subscriptions.each do |subs| %>
+    <li><%= link_to subs.message, subs %></li>
+  <% end %>
+</ul>

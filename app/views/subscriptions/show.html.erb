@@ -1,0 +1,11 @@
+
+<ul>
+  <% @users.each do |user|
+    if user.confirm?
+  %>
+    <li><p style="color: green;"><%= user.email %></p></li>
+  <% else %>
+    <li><p style="color: red;"><%= user.email %></p></li>
+  <% end %>
+  <% end %>
+</ul>

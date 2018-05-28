@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:update]
 
-  resources :subscriptions, only: [:index] do
+  resources :subscriptions, only: [:index, :show] do
     patch :send_mail, on: :collection
+    resources :users, only: [] do
+      patch :confirm, on: :member
+    end
   end
 
   # patch 'subscriptions/send'

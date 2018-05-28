@@ -1,4 +1,9 @@
 <h1>Посты за день</h1>
+
+<h3><%= @subscription.message %></h3>
+
+Если вы получили это сообщение, перейдите пожалуйста по <%= link_to 'ссылке', confirm_subscription_user_url(@subscription, @user), method: :patch %>
+
 <% @posts.each do |post| %>
 
   <article class="post">
